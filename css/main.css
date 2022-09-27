@@ -68,6 +68,10 @@ img {
   height: 100%;
 }
 
+input[type=date] {
+  background: transparent;
+}
+
 textarea,
 input {
   outline: none;
@@ -238,6 +242,7 @@ body {
   padding: 5px 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
+  width: 100%;
 }
 .book .form .btn {
   width: fit-content;

@@ -77,6 +77,10 @@ img {
   width: 100%;
   height: 100%;
 }
+
+input[type="date"] {
+  background: transparent;
+}
 // .btn {
 //   color: vars.$white;
 //   text-transform: capitalize;
