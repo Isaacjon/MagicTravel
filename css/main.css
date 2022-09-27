@@ -204,6 +204,12 @@ body {
   transition: opacity 1s ease;
   border-radius: 100%;
 }
+@media screen and (max-width: 700px) {
+  .banner .carousel-indicators [data-bs-target] {
+    width: 20px;
+    height: 20px;
+  }
+}
 .banner .carousel-indicators [data-bs-target].active {
   background: #ffa500;
 }

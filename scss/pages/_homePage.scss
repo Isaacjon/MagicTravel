@@ -92,6 +92,11 @@
     opacity: 1;
     transition: opacity 1s ease;
     border-radius: 100%;
+
+    @include mixins.media(700px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .carousel-indicators [data-bs-target].active {
