@@ -1,0 +1,107 @@
+@use "../abstract/vars";
+@use "../abstract/mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: vars.$white;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(1200px + 30px);
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
+
+  // @include mixins.media(576px) {
+  // padding: 0 5px;
+  // }
+}
+
+.btn {
+  background: vars.$yellow;
+  border-radius: 0;
+  border: none;
+  color: vars.$white;
+  font-size: 12px;
+
+  &:hover {
+    background: vars.$yellow !important;
+    filter: brightness(115%);
+  }
+}
+
+.sec-title {
+  text-align: center;
+
+  .parent-span {
+    span {
+      background: vars.$blur-yellow;
+      border: none;
+      border-radius: 3px;
+      margin: 2px;
+      padding: 0 7px;
+      text-transform: uppercase;
+      color: vars.$yellow;
+
+      @include mixins.media(500px) {
+        margin: 1px;
+        padding: 0 3.5px;
+      }
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+// .btn {
+//   color: vars.$white;
+//   text-transform: capitalize;
+//   font-weight: 500;
+//   font-size: 18px;
+//   border: none;
+//   border-radius: 4px;
+//   width: fit-content;
+//   width: max-content;
+//   height: max-content;
+//   background: vars.$blue;
+// }
+
+// .btn:hover {
+//   color: vars.$white !important;
+//   background-color: vars.$blue !important;
+//   border-color: unset !important;
+
+//   opacity: 0.8;
+// }
+textarea,
+input {
+  outline: none;
+}
+
+main {
+  height: 100%;
+}

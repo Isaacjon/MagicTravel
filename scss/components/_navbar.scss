@@ -1,0 +1,64 @@
+@use "../abstract/vars";
+@use "../abstract/mixins";
+
+header nav {
+  color: vars.$white;
+
+  .logo-title {
+    text-transform: uppercase;
+    span {
+      color: vars.$yellow;
+    }
+  }
+
+  .nav {
+    @include mixins.media(992px) {
+      position: fixed;
+      display: flex !important;
+      top: 54px;
+      left: 0;
+      background: rgba(51, 51, 51, 0.95);
+      height: 100vh;
+      width: 300px;
+      --bs-nav-link-padding-x: 0rem;
+      --bs-nav-link-padding-y: 0rem;
+      flex-direction: column;
+      justify-content: flex-start !important;
+      padding: 10px 20px 20px 20px;
+      // z-index: 99;
+      transition: 0.5s;
+      transform: translateX(-100%);
+      // filter: invert(100%) contrast(0.5);
+
+      &.active {
+        transform: translateX(0%);
+      }
+
+      li {
+        padding: 10px !important;
+
+        &:hover {
+          // text-align: center;
+          margin-left: 10px;
+        }
+      }
+    }
+    li a {
+      text-transform: capitalize;
+    }
+  }
+
+  .login-icons {
+    // width: 70px;
+
+    i {
+      // font-size: 16px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

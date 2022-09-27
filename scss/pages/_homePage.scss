@@ -1,0 +1,547 @@
+@use "../abstract/_vars.scss";
+@use "../abstract/mixins.scss";
+
+.banner {
+  height: 100%;
+  .carousel-item {
+    position: relative;
+    height: calc(100vh - 60px);
+    // min-height: 100%;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    @include mixins.media(600px) {
+      height: calc(70vh);
+    }
+
+    .carousel-caption {
+      .caption-title {
+        text-transform: uppercase;
+      }
+
+      p {
+        text-transform: capitalize;
+      }
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      position: relative;
+      z-index: 10;
+
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      color: #fff;
+      text-align: center;
+      width: fit-content;
+
+      @include mixins.media(500px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    // bottom: 0;
+    top: 75%;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: fit-content;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    height: fit-content;
+    padding: 5px 5px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 20px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    opacity: 1;
+    transition: opacity 1s ease;
+    border-radius: 100%;
+  }
+
+  .carousel-indicators [data-bs-target].active {
+    background: vars.$yellow;
+  }
+}
+
+.book {
+  // padding: 50px 0;
+  padding-top: 50px;
+
+  .wrapper {
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    // max-height: 40vh;
+  }
+
+  .img-block,
+  .form {
+    width: 49%;
+
+    @include mixins.media(992px) {
+      width: 80%;
+    }
+
+    @include mixins.media(400px) {
+      width: 95%;
+    }
+  }
+
+  .form {
+    height: 100%;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+
+    input {
+      padding: 5px 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      width: fit-content;
+    }
+  }
+
+  .img-block {
+    // width: 500px;
+    // height: 100%;
+    max-width: 450px;
+
+    max-height: 370px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .form label {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+  }
+}
+
+.packages {
+  padding: 50px 0;
+  width: 100%;
+
+  .card {
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.2);
+
+    @include mixins.media(655px) {
+      font-size: 12px;
+      width: 250px;
+    }
+
+    .card-body {
+      @include mixins.media(355px) {
+        min-height: 170px;
+        max-height: 170px;
+      }
+
+      @include mixins.media(300px) {
+        // min-height: 150px;
+        // max-height: 150px;
+      }
+    }
+
+    // &:nth-child(3) {
+    img {
+      min-height: 199px;
+
+      @include mixins.media(355px) {
+        min-height: 150px;
+        max-height: 150px;
+      }
+
+      @include mixins.media(300px) {
+        min-height: 120px;
+        max-height: 120px;
+      }
+    }
+    // }
+  }
+
+  .card-title {
+    font-size: 1.25em;
+    font-weight: 600;
+
+    i {
+      color: vars.$yellow;
+      margin-right: 5px;
+    }
+  }
+
+  .card-text {
+    color: vars.$text-color;
+    margin-bottom: 0 !important;
+    font-size: 1em;
+
+    @include mixins.media(655px) {
+      line-height: 16px;
+    }
+  }
+
+  .ratings {
+    // margin: 0 !important;
+    color: vars.$yellow;
+    // font-size: 12px;
+    font-size: 0.75em;
+  }
+
+  .pricing {
+    margin-bottom: 5px;
+    .new {
+      font-weight: 500;
+      font-size: 1em;
+    }
+
+    .old {
+      // font-size: 12px;
+      color: vars.$text-color;
+      font-size: 0.75em;
+      text-decoration: line-through;
+    }
+  }
+
+  .btn {
+    padding: 0.7em 2.5em;
+    font-size: 0.75em;
+  }
+}
+
+.services {
+  .card-title {
+    font-size: 20px;
+
+    @include mixins.media(768px) {
+      font-size: 16px;
+    }
+  }
+  .col {
+    padding: 0;
+  }
+  .card-body {
+    @include mixins.media(768px) {
+      padding: 8px !important;
+    }
+
+    i {
+      font-size: 30px;
+      color: vars.$yellow;
+
+      @include mixins.media(768px) {
+        font-size: 25px;
+      }
+    }
+
+    .card-text {
+      font-size: 12px;
+      line-height: 20px;
+
+      @include mixins.media(768px) {
+        font-size: 10px;
+      }
+
+      @include mixins.media(600px) {
+        max-width: 236px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.gallery {
+  // padding: 50px 0;
+  padding-top: 50px;
+  .col {
+    border: 5px solid vars.$white;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    // margin: 10px;
+    border-radius: 3px;
+
+    @include mixins.media(768px) {
+      border: 2px;
+      border: 3px solid vars.$white;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.review {
+  padding-top: 50px;
+  // padding-bottom: 50px;
+
+  .row {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .col {
+    // width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    padding-bottom: 0;
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    padding: 20px;
+    margin-bottom: 5px;
+  }
+
+  .card {
+    box-shadow: none !important;
+    background-color: transparent;
+    border: none;
+
+    @include mixins.media(992px) {
+      font-size: 13px;
+    }
+
+    @include mixins.media(592px) {
+      font-size: 10px;
+    }
+  }
+
+  .card-body {
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .profile-img {
+    margin: 0 auto;
+    max-width: 7.5em;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .card-title {
+    font-weight: 600;
+    font-size: 2em;
+  }
+
+  .card-text {
+    color: vars.$text-color;
+    margin-bottom: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+
+  .ratings {
+    margin-top: 5px;
+    color: vars.$yellow;
+  }
+}
+
+.contact {
+  padding: 50px 0 25px;
+  width: 100%;
+
+  .img-block {
+    width: 100%;
+    max-width: 45%;
+    height: 100%;
+
+    @include mixins.media(992px) {
+      max-width: 75%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .form {
+    box-sizing: content-box;
+    width: 100%;
+    max-width: 50%;
+    padding: 30px 20px;
+
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 5px;
+    // media
+    @include mixins.media(992px) {
+      max-width: 100%;
+    }
+    @include mixins.media(500px) {
+      padding: 15px 10px;
+    }
+
+    input {
+      width: 48%;
+      background: rgba(242, 239, 239, 0.6);
+      padding: 10px;
+      border: none;
+      font-weight: 500;
+
+      @include mixins.media(500px) {
+        width: 100%;
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+    }
+
+    textarea {
+      font-weight: 500;
+
+      background: rgba(242, 239, 239, 0.6);
+      padding: 10px;
+
+      width: 100%;
+      height: 160px;
+      border: none;
+      resize: none;
+
+      @include mixins.media(500px) {
+        font-size: 12px;
+
+        padding: 5px 10px;
+        height: 100px;
+      }
+    }
+
+    .btn {
+      padding: 10px 20px;
+
+      @include mixins.media(500px) {
+        padding: 7px 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.partners {
+  padding-bottom: 25px;
+  .container div {
+    height: 100%;
+    width: 100%;
+    max-width: 185px;
+
+    @include mixins.media(420px) {
+      max-width: 150px;
+    }
+    @include mixins.media(350px) {
+      max-width: 100px;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.footer {
+  background: vars.$dark;
+  color: vars.$white;
+  padding: 50px 0;
+  .top {
+    .box {
+      width: fit-content;
+      max-width: 288px;
+
+      .box-title {
+        text-transform: capitalize;
+      }
+      p {
+        max-width: 380px;
+        font-size: 14px;
+        opacity: 0.9;
+        font-size: 12px;
+
+        &:hover {
+          color: vars.$yellow;
+        }
+      }
+    }
+    ul {
+      width: fit-content;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      text-transform: capitalize;
+      font-size: 12px;
+    }
+
+    li {
+      opacity: 0.9;
+      margin-bottom: 5px;
+
+      @include mixins.media(500px) {
+        margin-bottom: 0;
+      }
+      a {
+        &:hover {
+          color: vars.$yellow;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 10px;
+    border-top: 1px solid rgb(80, 80, 80);
+    text-align: center;
+    padding-top: 10px;
+
+    p {
+      span {
+        color: vars.$yellow;
+      }
+      // display: flex;
+      // align-items: center;
+      // margin: 0 auto;
+    }
+  }
+}
